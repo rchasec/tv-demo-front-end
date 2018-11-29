@@ -1,0 +1,50 @@
+
+header h1 {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;    
+}
+h1.top {
+    border-style: solid;
+}
+section.left {
+    float: left;
+    border-style: solid;
+    height: 750px;
+}
+section.previewright nav {
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 750px;
+}
+section.previewright div {
+    font-size: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    border-style: solid;
+    height: 50px;
+}
+.left input {
+    border-radius: 50%;
+}
+article section {
+    float: left;
+}
+section.manageright a {
+    font-size: 25px;
+    height: 50px;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section.manageright form {
+    border-style: solid;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+}

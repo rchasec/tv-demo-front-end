@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manage</title>
+        <link rel="stylesheet" href="tvstyle.css">
+    </head>
+    <header>
+        <h1 class="top">
+            Manage
+            <a href="preview.html">Preview</a>
+        </h1>
+    </header>
+    <body>
+        <script>
+            const clickedshow1 = function(){
+            console.log('Show 1')
+        }
+            const clickedshow2 = function(){
+            console.log('Show 2')
+        }
+        const clickedshow1delete = function(){
+            console.log('Show 1 Delete')
+        }
+            const clickedshow2delete = function(){
+            console.log('Show 2 Delete')
+        }        
+        </script>
+            <section class="left">
+            <h2>Shows</h2>
+            <button type="button" onclick="clickedshow1()">Breaking Bad</button><input type="button" value="x" onclick="clickedshow1delete()"/></input><br>
+            <button type="button" onclick="clickedshow2()">The Haunting of Hill House</button><input type="button" value="x" onclick="clickedshow2delete()"/></input>
+        </section>
+        <section class="manageright">
+            <div class="right">
+            <a>New/Edit Show</a>
+            </div>
+            <form>
+                <h3>Name:<input type="text" ><br>
+                    Rating:<input type="text" ><br>
+                    Image URL:<input type="text" ><br>
+                    <button type="button">Create/Update</button>
+                </h3>
+            </form>
+            
+        </section>
+    </body>
+</html>
