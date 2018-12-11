@@ -1,5 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import TVShow from "./TVShow"
 import './tvstyleforjs.css';
+
+
+
+
 
 class ManagePage extends Component {
 
@@ -20,8 +25,8 @@ class ManagePage extends Component {
             <div>
                 <section className="left">
                     <h2>Shows</h2>
-                    <button type="button" onclick="clickedshow1()">Breaking Bad</button><input type="button" value="x" onclick="clickedshow1delete()" /><br />
-                    <button type="button" onclick="clickedshow2()">The Haunting of Hill House</button><input type="button" value="x" onclick="clickedshow2delete()" />
+                    <TVShow allowDelete={true}/><input type="button" value="x" onclick="clickedshow1delete()" /><br />
+                    <TVShow allowDelete={true}/><input type="button" value="x" onclick="clickedshow2delete()" />
                 </section>
                 <section className="manageright">
                     <div className="right">

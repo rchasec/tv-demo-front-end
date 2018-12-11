@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import './tvstyleforjs.css';
+import React, { Component } from 'react'
+import TVShow from "./TVShow"
+import './tvstyleforjs.css'
 
 class PreviewPage extends Component {
 
@@ -15,8 +16,8 @@ class PreviewPage extends Component {
             <div>
                 <section className="left">
                     <h2>Shows</h2>
-                    <button type="button" onclick="clickedshow1()">Breaking Bad</button><br />
-                    <button type="button" onclick="clickedshow2()">The Haunting of Hill House</button>
+                    <TVShow/><br />
+                    <TVShow/>
                 </section>
                 <section className="previewright">
                     <div><a>Breaking Bad</a><a>Rating: 4</a></div>
