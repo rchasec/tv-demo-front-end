@@ -9,6 +9,9 @@ export default class ManagePage extends Component {
     tvShowDeleted = () => {
         console.log('tvShowDeleted')
     }
+    saveTVShow = () => {
+        console.log('saveTVShow')
+    }
 
     render = () => {
         return (
@@ -26,10 +29,9 @@ export default class ManagePage extends Component {
                             Name:<input type="text" /><br/>
                             Rating:<input type="text" /><br/>
                             Image URL:<input type="text" /><br/>
-                            <button type="button">Create/Update</button>
+                            <button type="button" onClick={this.props.saveTVShow}>Submit</button>
                         </h3>
                     </form>
-
                 </section>
             </div>
         )
