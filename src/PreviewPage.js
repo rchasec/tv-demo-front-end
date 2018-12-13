@@ -1,23 +1,17 @@
 import React, { Component } from 'react'
 import TVShow from "./TVShow"
-import './tvstyleforjs.css'
+import './style.css'
 
-class PreviewPage extends Component {
-
-    clickedshow1 = () => {
-        console.log('Show 1')
+export default class PreviewPage extends Component {
+    tvShowSelected = () => {
+        console.log('tvShowSelected')
     }
-    clickedshow2 = () => {
-        console.log('Show 2')
-    }
-
     render = () => {
         return (
             <div>
                 <section className="left">
                     <h2>Shows</h2>
-                    <TVShow/><br />
-                    <TVShow/>
+                    <TVShow selectHandler={this.tvShowSelected}/>
                 </section>
                 <section className="previewright">
                     <div><a>Breaking Bad</a><a>Rating: 4</a></div>
@@ -29,5 +23,3 @@ class PreviewPage extends Component {
         )
     }
 }
-
-export default PreviewPage;
