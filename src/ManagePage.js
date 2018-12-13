@@ -22,14 +22,14 @@ export default class ManagePage extends Component {
                 </section>
                 <section className="manageright">
                     <div className="right">
-                        <a>New/Edit Show</a>
+                        <p>New/Edit Show</p>
                     </div>
                     <form>
                         <h3>
                             Name:<input type="text" /><br/>
                             Rating:<input type="text" /><br/>
                             Image URL:<input type="text" /><br/>
-                            <button type="button" onClick={this.props.saveTVShow}>Submit</button>
+                            <button type="button" onClick={this.saveTVShow()}>Submit</button>
                         </h3>
                     </form>
                 </section>

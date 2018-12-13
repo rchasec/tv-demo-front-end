@@ -14,7 +14,7 @@ export default class PreviewPage extends Component {
                     <TVShow selectHandler={this.tvShowSelected}/>
                 </section>
                 <section className="previewright">
-                    <div><a>Breaking Bad</a><a>Rating: 4</a></div>
+                    <div><p>Breaking Bad</p><p>Rating: 4</p></div>
                     <div className="image">
                         <img src="./../breaking-bad-cover.jpg" alt="breaking bad cover"/>
                     </div>
