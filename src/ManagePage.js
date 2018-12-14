@@ -29,7 +29,7 @@ export default class ManagePage extends Component {
                             Name:<input type="text" /><br/>
                             Rating:<input type="text" /><br/>
                             Image URL:<input type="text" /><br/>
-                            <button type="button" onClick={this.saveTVShow()}>Submit</button>
+                            <button type="button" onClick={this.saveTVShow}>Submit</button>
                         </h3>
                     </form>
                 </section>
