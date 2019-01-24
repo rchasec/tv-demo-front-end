@@ -49,8 +49,11 @@ header h1 {
  }
  section.manageright form {
      border-style: solid;
-     height: 750px;
+     height: 250px;
      display: flex;
      justify-content: center;
+ }
+ div.formresults {
+     font-size: 25px;
  }
  
