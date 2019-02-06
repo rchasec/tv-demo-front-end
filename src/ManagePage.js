@@ -12,9 +12,9 @@ export default class ManagePage extends Component {
 
     tvShowSelected = () => {
         console.log('tvShowSelected')
-        this.setState({ nameInProgress: this.state.show.name,
-                        ratingInProgress: this.state.show.rating,
-                        imageUrlInProgress: this.state.show.imageUrl
+        this.setState({ nameInProgress: this.state.show.nameSaved,
+                        ratingInProgress: this.state.show.ratingSaved,
+                        imageUrlInProgress: this.state.show.imageUrlSaved
         })
     }
     tvShowDeleted = () => {
@@ -32,25 +32,25 @@ export default class ManagePage extends Component {
             ratingInProgress: "",
             imageUrlInProgress: "",
             show: {
-                name: this.state.nameInProgress,
-                rating: this.state.ratingInProgress,
-                imageUrl: this.state.imageUrlInProgress
+                nameSaved: this.state.nameInProgress,
+                ratingSaved: this.state.ratingInProgress,
+                imageUrlSaved: this.state.imageUrlInProgress
             }
         })
     }
-    nameInProgress = (e) => {
+    nameInput = (e) => {
         this.setState({ nameInProgress: e.target.value })
     }
-    ratingInProgress = (e) => {
+    ratingInput = (e) => {
         this.setState({ ratingInProgress: e.target.value })
     }
-    imageUrlInProgress = (e) => {
+    imageUrlInput = (e) => {
         this.setState({ imageUrlInProgress: e.target.value })
         console.log(e.target.value)
     }
     renderShows = () => {
         return(
-            <TVShow name={this.state.show.name} allowDelete={true} selectHandler={this.tvShowSelected} deleteHandler={this.tvShowDeleted}/>
+            <TVShow name={this.state.show.nameSaved} allowDelete={true} selectHandler={this.tvShowSelected} deleteHandler={this.tvShowDeleted}/>
         )
     }
 
@@ -67,9 +67,9 @@ export default class ManagePage extends Component {
                     </div>
                     <form>
                         <h3>
-                            Name:<input id="name" type="text" value={this.state.nameInProgress} onChange={this.nameInProgress}/><br/>
-                            Rating:<input id="rating" type="text" value={this.state.ratingInProgress} onChange={this.ratingInProgress}/><br/>
-                            Image URL:<input id="image url" type="text" value={this.state.imageUrlInProgress} onChange={this.imageUrlInProgress}/><br/>
+                            Name:<input id="name" type="text" value={this.state.nameInProgress} onChange={this.nameInput}/><br/>
+                            Rating:<input id="rating" type="text" value={this.state.ratingInProgress} onChange={this.ratingInput}/><br/>
+                            Image URL:<input id="image url" type="text" value={this.state.imageUrlInProgress} onChange={this.imageUrlInput}/><br/>
                             <button type="button" onClick={this.saveTvShow}>Submit</button>
                         </h3>
                     </form>
