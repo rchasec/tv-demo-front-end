@@ -4,6 +4,31 @@ import ManagePage from './ManagePage'
 import PreviewPage from './PreviewPage'
 
 export default class App extends Component {
+  state = { 
+    show: ""
+    }
+  tvShowDeleted = () => {
+    console.log('tvShowDeleted')
+    this.setState({ 
+    show: ""
+    })
+  }
+  saveTvShow = (showToSave) => {
+    this.setState({
+      show: {
+        nameSaved: showToSave.nameSaved,
+        ratingSaved: showToSave.ratingSaved,
+        imageUrlSaved: showToSave.imageUrlSaved
+      }
+    })
+  }
+  renderManagePage = () => {
+    return(
+      <ManagePage show={this.state.show}
+                  tvShowDeleted={this.tvShowDeleted}
+                  saveTvShow={this.saveTvShow}/>
+    )
+  }
   render() {
     return (
       <Router>
@@ -13,7 +38,7 @@ export default class App extends Component {
             <Link to="/preview">Preview</Link>
           </nav>
           <Switch>
-            <Route path="/" exact component={ManagePage}/>
+            <Route path="/" exact component={this.renderManagePage}/>
             <Route path="/preview" component={PreviewPage}/>
           </Switch>
         </div>

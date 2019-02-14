@@ -1,41 +1,41 @@
 import React, { Component } from 'react'
 import TVShow from "./TVShow"
 import './style.css'
+import PropTypes from 'prop-types'
 
 export default class ManagePage extends Component {
+    static propTypes = {
+        show: PropTypes.object.isRequired,
+        tvShowDeleted: PropTypes.func.isRequired,
+        saveTvShow: PropTypes.func.isRequired
+    }
     state = { 
-        nameInProgress: "",
-        ratingInProgress: "",
-        imageUrlInProgress: "",
-        show: ""
+        nameInProgress: "name placeholder",
+        ratingInProgress: "rating placeholder",
+        imageUrlInProgress: "URL placeholder"
     }
 
     tvShowSelected = () => {
-        console.log('tvShowSelected')
-        this.setState({ nameInProgress: this.state.show.nameSaved,
-                        ratingInProgress: this.state.show.ratingSaved,
-                        imageUrlInProgress: this.state.show.imageUrlSaved
+        this.setState({ nameInProgress: this.props.show.nameSaved,
+                        ratingInProgress: this.props.show.ratingSaved,
+                        imageUrlInProgress: this.props.show.imageUrlSaved
         })
     }
     tvShowDeleted = () => {
         console.log('tvShowDeleted')
-        this.setState({ nameInProgress: "",
-                        ratingInProgress: "",
-                        imageUrlInProgress: ""
-        })
+        this.props.tvShowDeleted()
     }
-
     saveTvShow = (e) => {
         e.preventDefault()
+        this.props.saveTvShow({
+            nameSaved: this.state.nameInProgress,
+            ratingSaved: this.state.ratingInProgress,
+            imageUrlSaved: this.state.imageUrlInProgress
+        })
         this.setState({
             nameInProgress: "",
             ratingInProgress: "",
             imageUrlInProgress: "",
-            show: {
-                nameSaved: this.state.nameInProgress,
-                ratingSaved: this.state.ratingInProgress,
-                imageUrlSaved: this.state.imageUrlInProgress
-            }
         })
     }
     nameInput = (e) => {
@@ -50,7 +50,10 @@ export default class ManagePage extends Component {
     }
     renderShows = () => {
         return(
-            <TVShow name={this.state.show.nameSaved} allowDelete={true} selectHandler={this.tvShowSelected} deleteHandler={this.tvShowDeleted}/>
+            <TVShow name={this.props.show.nameSaved}
+                    allowDelete={true}
+                    selectHandler={this.tvShowSelected}
+                    deleteHandler={this.tvShowDeleted}/>
         )
     }
 
