@@ -16,9 +16,10 @@ export default class ManagePage extends Component {
     }
 
     tvShowSelected = () => {
-        this.setState({ nameInProgress: this.props.show.nameSaved,
-                        ratingInProgress: this.props.show.ratingSaved,
-                        imageUrlInProgress: this.props.show.imageUrlSaved
+        this.setState({
+            nameInProgress: this.props.show.nameSaved,
+            ratingInProgress: this.props.show.ratingSaved,
+            imageUrlInProgress: this.props.show.imageUrlSaved
         })
     }
     tvShowDeleted = () => {
@@ -62,18 +63,30 @@ export default class ManagePage extends Component {
             <div>
                 <section className="left">
                     <h2>Shows</h2>
-                   { this.renderShows() }
+                   {this.renderShows()}
                 </section>
                 <section className="manageright">
                     <div className="right">
-                        <p>New/Edit Show</p>
+                        <p>Create/Edit Show</p>
                     </div>
                     <form>
                         <h3>
-                            Name:<input id="name" type="text" value={this.state.nameInProgress} onChange={this.nameInput}/><br/>
-                            Rating:<input id="rating" type="text" value={this.state.ratingInProgress} onChange={this.ratingInput}/><br/>
-                            Image URL:<input id="image url" type="text" value={this.state.imageUrlInProgress} onChange={this.imageUrlInput}/><br/>
-                            <button type="button" onClick={this.saveTvShow}>Submit</button>
+                            Name:<input id="name"
+                                        type="text"
+                                        value={this.state.nameInProgress}
+                                        onChange={this.nameInput}/><br/>
+                            Rating:<input id="rating"
+                                          type="text"
+                                          value={this.state.ratingInProgress}
+                                          onChange={this.ratingInput}/><br/>
+                            Image URL:<input id="image url"
+                                             type="text"
+                                             value={this.state.imageUrlInProgress}
+                                             onChange={this.imageUrlInput}/><br/>
+                            <button type="button"
+                                    onClick={this.saveTvShow}>
+                                    Submit
+                                    </button>
                         </h3>
                     </form>
                 </section>

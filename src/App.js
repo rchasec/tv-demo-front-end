@@ -29,6 +29,11 @@ export default class App extends Component {
                   saveTvShow={this.saveTvShow}/>
     )
   }
+  renderPreviewPage = () => {
+    return(
+      <PreviewPage show={this.state.show}/>
+    )
+  }
   render() {
     return (
       <Router>
@@ -39,7 +44,7 @@ export default class App extends Component {
           </nav>
           <Switch>
             <Route path="/" exact component={this.renderManagePage}/>
-            <Route path="/preview" component={PreviewPage}/>
+            <Route path="/preview" component={this.renderPreviewPage}/>
           </Switch>
         </div>
       </Router>
