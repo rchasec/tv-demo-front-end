@@ -7,7 +7,8 @@ export default class ManagePage extends Component {
     static propTypes = {
         show: PropTypes.object.isRequired,
         tvShowDeleted: PropTypes.func.isRequired,
-        saveTvShow: PropTypes.func.isRequired
+        saveTvShow: PropTypes.func.isRequired,
+        tvShows: PropTypes.array.isRequired
     }
     state = { 
         nameInProgress: "name placeholder",
@@ -50,12 +51,14 @@ export default class ManagePage extends Component {
         console.log(e.target.value)
     }
     renderShows = () => {
-        return(
-            <TVShow name={this.props.show.nameSaved}
-                    allowDelete={true}
-                    selectHandler={this.tvShowSelected}
-                    deleteHandler={this.tvShowDeleted}/>
-        )
+        const tvShowElements = []
+        for (let i = 0;i<this.props.tvShows.length;i++){
+            tvShowElements.push(<TVShow name={this.props.tvShows[i].nameSaved}
+                                        rating={this.props.tvShows[i].ratingSaved}
+                                        imageUrl={this.props.tvShows[i].imageUrlSaved}/>
+            )
+        }
+        return tvShowElements
     }
 
     render = () => {
