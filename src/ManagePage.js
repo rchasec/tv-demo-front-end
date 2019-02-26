@@ -50,15 +50,15 @@ export default class ManagePage extends Component {
         this.setState({ imageUrlInProgress: e.target.value })
         console.log(e.target.value)
     }
+
     renderShows = () => {
-        const tvShowElements = []
-        for (let i = 0;i<this.props.tvShows.length;i++){
-            tvShowElements.push(<TVShow name={this.props.tvShows[i].nameSaved}
-                                        rating={this.props.tvShows[i].ratingSaved}
-                                        imageUrl={this.props.tvShows[i].imageUrlSaved}/>
+        return this.props.tvShows.map((TvShow) => {
+            return(
+                <TVShow name={TvShow.nameSaved}
+                        rating={TvShow.ratingSaved}
+                        imageUrl={TvShow.imageUrlSaved}/>
             )
-        }
-        return tvShowElements
+        })
     }
 
     render = () => {
